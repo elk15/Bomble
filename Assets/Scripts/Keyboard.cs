@@ -10,6 +10,7 @@ public class Keyboard : MonoBehaviour
     public Button delKey;
     private string numbers = "1234567890";
     public Gameplay gameplay;
+    public Timer timer;
 
 
     void Start()
