@@ -26,9 +26,15 @@ public class Gameplay : MonoBehaviour
     string GetPassword()
     {
         string password = "";
+        int num;
         for(int i=0; i<4; i++)
         {
-            password = password + Random.Range(0, 10).ToString(); 
+            num = Random.Range(0, 10); 
+            while (password.Contains(num.ToString()))
+            {
+              num = Random.Range(0, 10);  
+            }
+            password += num.ToString();
         }
         Debug.Log(password);
         return password;
