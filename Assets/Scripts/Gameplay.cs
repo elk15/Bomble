@@ -14,14 +14,14 @@ public class Gameplay : MonoBehaviour
     public List<TextMeshProUGUI> numberBoxes = new List<TextMeshProUGUI>();
     public int currentNumBox;
     private int isWrong = 0;
-    
+    public Timer timer;
+    public Score score;
 
     // Start is called before the first frame update
     void Start()
     {
         correctPassword = GetPassword();
     }
-
 
     string GetPassword()
     {
@@ -104,9 +104,14 @@ public class Gameplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentNumBox >= 5 && isWrong == 1)
+        timer.UpdateTime();
+
+        if (currentNumBox >=5 && isWrong == 1)
         {
             SceneManager.LoadScene("Lose Screen");
         }
+
+        score.CalculateScorePerTime();
+        //score.CalculateScorePerTry();
     }
 }

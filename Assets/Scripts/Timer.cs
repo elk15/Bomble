@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-
-    public float timeValue = 300;
     public Text timeText;
+    public float timeValue = 300;
+    //public Score score;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateTime()
     {
         if (timeValue > 0)
         {
@@ -24,6 +23,7 @@ public class Timer : MonoBehaviour
         }
 
         DisplayTime(timeValue);
+        //score.CalculateScorePerTime();
     }
 
     void DisplayTime(float timeToDisplay)
