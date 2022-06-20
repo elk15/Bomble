@@ -14,6 +14,12 @@ public class Gameplay : MonoBehaviour
     public List<TextMeshProUGUI> numberBoxes = new List<TextMeshProUGUI>();
     public int currentNumBox;
     private int isWrong = 0;
+    public int finalTime;
+    public Timer timer;
+    public Score score;
+    public PopupWindow popupWindow;
+    public AudioSource coreMusic;
+    public AudioSource winSound;
     
 
     // Start is called before the first frame update
@@ -93,7 +99,13 @@ public class Gameplay : MonoBehaviour
         if(oldText == correctPassword)
         {
             isWrong = 0;
-            SceneManager.LoadScene("Win Screen");
+            finalTime = Mathf.RoundToInt(timer.timeValue);
+            score.CalculateScore();
+            popupWindow.OpenPopUp();
+            coreMusic.Stop();
+            winSound.Play();
+            //SceneManager.LoadScene("Win Screen");
+
         }
         else
         {
