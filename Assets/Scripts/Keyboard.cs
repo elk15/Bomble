@@ -37,6 +37,7 @@ public class Keyboard : MonoBehaviour
 
     public void ClickOkKey()
     {
+        GetComponent<AudioSource>().Play();
         if(gameplay.currentNumBox < 5 && gameplay.numberBoxes[gameplay.currentNumBox].text.Length == 4)
         {
             gameplay.CheckPassword();
@@ -46,6 +47,7 @@ public class Keyboard : MonoBehaviour
 
     public void ClickDelKey()
     {
+        GetComponent<AudioSource>().Play();
         if(gameplay.numberBoxes[gameplay.currentNumBox].text.Length > 0)
         {
             string result = gameplay.numberBoxes[gameplay.currentNumBox].text.Remove(gameplay.numberBoxes[gameplay.currentNumBox].text.Length-1);
@@ -56,6 +58,7 @@ public class Keyboard : MonoBehaviour
     public void ClickNumKey(string numKey)
     {
         // Debug.Log(numKey);
+        GetComponent<AudioSource>().Play();
         if(gameplay.currentNumBox < 5)
         {
             gameplay.AddNumberToDisplay(numKey);
