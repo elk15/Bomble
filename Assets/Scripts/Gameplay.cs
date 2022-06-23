@@ -21,7 +21,6 @@ public class Gameplay : MonoBehaviour
     public AudioSource coreMusic;
     public AudioSource winSound;
     public AudioSource TickingSound;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -105,6 +104,7 @@ public class Gameplay : MonoBehaviour
             popupWindow.OpenPopUp();
             coreMusic.Stop();
             TickingSound.Stop();
+
             winSound.Play();
             //SceneManager.LoadScene("Win Screen");
 
